@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400&display=swap");
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: url(/img/mainBg.svg); }
+  .wrap .circles {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 0 !important;
+    opacity: .25; }
+    .wrap .circles .circle {
+      position: absolute;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 5px 2px #ffffff30;
+      box-shadow: 0 0 5px 2px #ffffff30;
+      background: -webkit-radial-gradient(#000000, #1C1F2E);
+      background: -o-radial-gradient(#000000, #1C1F2E);
+      background: radial-gradient(#000000, #1C1F2E); }
+      .wrap .circles .circle:nth-child(1) {
+        width: 150px;
+        height: 150px;
+        left: 450px;
+        z-index: 5; }
+      .wrap .circles .circle:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        left: 375px;
+        z-index: 4; }
+      .wrap .circles .circle:nth-child(3) {
+        width: 600px;
+        height: 600px;
+        left: 250px;
+        z-index: 3; }
+      .wrap .circles .circle:nth-child(4) {
+        width: 1200px;
+        height: 1200px;
+        left: 100px;
+        z-index: 2; }
+      .wrap .circles .circle:nth-child(5) {
+        width: 2000px;
+        height: 2000px;
+        z-index: 1;
+        left: -150px; }
+  .wrap .text {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 0 125px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 40%;
+    text-align: right; }
+    .wrap .text h1 {
+      margin: 0;
+      color: #f2f2f2;
+      font-size: 3em; }
+      .wrap .text h1 span {
+        font-size: 1.5em;
+        color: #F30647; }
+    .wrap .text p {
+      font-size: 1.3em;
+      margin: 0;
+      margin-top: 35px;
+      line-height: 1.5em; }
