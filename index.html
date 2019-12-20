@@ -5,26 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Document</title>
+    <title>Damian Chmiel | Web Design Portfolio</title>
 </head>
 <body>
-    
-    <div class="wrap">
-        <div class="circles">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
+    <header>
+        <div id="navbar">
+            <a href="/index.html" id="logo">
+                <div class="col">
+                    <img src="/img/logo.svg" alt="logo">
+                    <h1>chmiel</h1>
+                </div>
+                <div class="col">
+                    <h1>damian</h1>
+                </div>
+            </a>
+            <a id="burger" href="#!">
+                <img src="/img/BURGER.svg" alt="menu">
+            </a>
         </div>
-        <div class="text">
-            <h1>I deliver <span>custom</span> & <span>functional</span> websites for bussiness.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque amet ipsam blanditiis id nostrum consequatur fugit corrupti ullam, nihil distinctio reiciendis. Suscipit nam voluptatibus sequi eius ullam officia consectetur illo.</p>
+        <nav>
+            <div class="container">
+                <a href="#!" class="close"><img src="/img/btn_close.svg" alt="close menu"></a>
+                <ul>
+                    <li>
+                        <img src="/img/logo_cutout.svg" alt="logo">
+                    </li>
+                    <li><a href="#!"><h1> home ---------------- home ---------------- home ---------------- home ---------------- </h1></a></li>
+                    <li><a href="#!"><h1>work -------------------------------- work -------------------------------- work -------------------------------- work -------------------------------- </h1></a></li>
+                    <li><a href="#!"><h1>contact ----------------------------------------- contact ----------------------------------------- contact ----------------------------------------- contact ----------------------------------------- </h1></a></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="wrap">
+            <section>
+                <div class="circles">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <div class="text">
+                    <h1>I deliver <span>custom</span> & <span>functional</span> websites for bussiness.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque amet ipsam blanditiis id nostrum consequatur fugit corrupti ullam, nihil distinctio reiciendis. Suscipit nam voluptatibus sequi eius ullam officia consectetur illo.</p>
+                    <a class="button" href="#!">Show me.</a>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Scroll down to see my work</span>
+                    <img src="/img/arrow_red.svg" alt="arrow down">
+                </div>
+            </section>
+            <section>
+                
+            </section>
         </div>
-    </div>
-
+        <ul class="sm">
+            <li><a href="#!"><img src="/img/mail-envelope-svgrepo-com.svg" alt="e-mail"></a></li>
+            <li><a href="#!"><img src="/img/github-svgrepo-com.svg" alt="github"></a></li>
+            <li><a href="#!"><img src="/img/dribbble-svgrepo-com.svg" alt="dribbble"></a></li>
+            <li><a href="#!"><img src="/img/linkedin-big-logo-svgrepo-com.svg" alt="linkedin"></a></li>
+        </ul>    
+    </main>  
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+<script>
+   const navText = document.querySelectorAll('nav li h1');
+   navText.forEach(e=>{
+        new CircleType(e);
+   })
+</script>
 <script>
     const tl = new TimelineMax({paused:true,repeat:-1});
     tl
@@ -34,6 +88,8 @@
         tl.yoyo(true);
         tl.play();            
     },3000)
-    </script>
+
+</script>
+<script src="/js/nav.js"></script>
 </body>
 </html>
