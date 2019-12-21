@@ -367,7 +367,8 @@ nav {
 section {
   height: 100vh;
   width: 100%;
-  position: relative; }
+  position: relative;
+  overflow: visible; }
 
 .wrap {
   width: 100%;
@@ -377,7 +378,7 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden; }
-  .wrap .circles {
+  .wrap #s1 .circles {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
@@ -392,8 +393,8 @@ section {
     align-items: center;
     z-index: 0 !important;
     opacity: .25;
-    overflow-x: hidden; }
-    .wrap .circles .circle {
+    overflow: hidden; }
+    .wrap #s1 .circles .circle {
       position: absolute;
       border-radius: 50%;
       -webkit-box-shadow: 0 0 5px 2px #ffffff30;
@@ -401,32 +402,32 @@ section {
       background: -webkit-radial-gradient(#000000, #1C1F2E);
       background: -o-radial-gradient(#000000, #1C1F2E);
       background: radial-gradient(#000000, #1C1F2E); }
-      .wrap .circles .circle:nth-child(1) {
+      .wrap #s1 .circles .circle:nth-child(1) {
         width: 150px;
         height: 150px;
         left: 450px;
         z-index: 5; }
-      .wrap .circles .circle:nth-child(2) {
+      .wrap #s1 .circles .circle:nth-child(2) {
         width: 300px;
         height: 300px;
         left: 375px;
         z-index: 4; }
-      .wrap .circles .circle:nth-child(3) {
+      .wrap #s1 .circles .circle:nth-child(3) {
         width: 600px;
         height: 600px;
         left: 250px;
         z-index: 3; }
-      .wrap .circles .circle:nth-child(4) {
+      .wrap #s1 .circles .circle:nth-child(4) {
         width: 1200px;
         height: 1200px;
         left: 100px;
         z-index: 2; }
-      .wrap .circles .circle:nth-child(5) {
+      .wrap #s1 .circles .circle:nth-child(5) {
         width: 2000px;
         height: 2000px;
         z-index: 1;
         left: -150px; }
-  .wrap .text {
+  .wrap #s1 .text {
     height: 100%;
     position: absolute;
     right: 0;
@@ -446,23 +447,85 @@ section {
     flex-direction: column;
     width: 40%;
     text-align: right; }
-    .wrap .text h1 {
+    .wrap #s1 .text h1 {
       margin: 0;
       color: #f2f2f2;
       font-size: 3em;
       line-height: 1.4em;
       margin-top: 140px; }
-      .wrap .text h1 span {
+      .wrap #s1 .text h1 span {
         font-size: 1.5em;
         color: #F30647; }
-    .wrap .text p {
+    .wrap #s1 .text p {
       font-size: 1.3em;
       margin: 0;
       margin-top: 35px;
       margin-bottom: 70px;
       line-height: 1.5em;
       color: #ddd; }
-    .wrap .text a {
+    .wrap #s1 .text a {
       background: url(/img/btn_red.svg);
       background-size: contain;
       background-repeat: no-repeat; }
+  .wrap .project {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .wrap .project .container {
+      width: calc(100% - 300px);
+      height: calc(100% - 200px);
+      background: -webkit-gradient(linear, left top, left bottom, from(#F30647), to(#700320));
+      background: -webkit-linear-gradient(#F30647, #700320);
+      background: -o-linear-gradient(#F30647, #700320);
+      background: linear-gradient(#F30647, #700320);
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+      -ms-grid-rows: (50%)[4];
+      grid-template-rows: repeat(4, 50%); }
+      .wrap .project .container .title {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 2;
+        grid-area: 2/3/auto/span 2;
+        background: #1C1F2E;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: left;
+        -ms-flex-pack: left;
+        justify-content: left;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 35px 70px; }
+        .wrap .project .container .title h1 {
+          font-size: 120px;
+          margin: 0;
+          width: 30%;
+          text-align: center;
+          text-transform: uppercase;
+          z-index: 1;
+          color: #0057AA; }
+          .wrap .project .container .title h1 span {
+            color: #fff; }
+        .wrap .project .container .title h2 {
+          font-size: 550px;
+          color: transparent;
+          -webkit-text-stroke: 1px #fff;
+          opacity: .05; }
+      .wrap .project .container .description {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        grid-area: 1/1/3/1;
+        background: #1C1F2E;
+        padding: 35px 70px; }
+        .wrap .project .container .description h1 {
+          color: #fff; }
