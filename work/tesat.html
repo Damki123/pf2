@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="/css/tesat.css">
     <title>Portfolio | TESAT</title>
 </head>
@@ -41,22 +43,66 @@
     </header>
     <div class="wrap">
         <section id="s1">
-            <img src="/img/tesat_logo.svg" alt="tesat logo" id="projectlogo">
             <div class="slides">
                 <div class="controlls">
-                    <div id="next">next</div>
-                    <div id="prev"></div>
+                    <div id="prev">
+                        <i class="material-icons">
+                            chevron_left
+                            </i>
+                    </div>
+                    <div id="next">
+                        <i class="material-icons">
+                            chevron_right
+                            </i>
+                    </div>
                 </div>
-                <div class="slide slide1">
+                <h1 id="slideTitle">home</h1>
+                <div class="slide active" data-title="home">
                     <img src="/img/tesat_s1.png" alt="asd">
                 </div>
-                <div class="slide slide2">                    
+                <div class="slide" data-title="product">                    
                     <img src="/img/tesat_p2.jpg" alt="asd">
                 </div>                
+                <div class="slide" data-title="history">                    
+                    <img src="/img/tesat_p3.jpg" alt="asd">
+                </div>                
+                <div class="slide" data-title="cards">                    
+                    <img src="/img/tesat_logo.svg" alt="asd">
+                </div>                
+            </div>
+            <div class="scroll-indicator">
+                <span>scroll down</span>
             </div>
         </section>
-        <section>s2</section>
+        <section id="s2">
+            <img class="photo" src="/img/tesat_s1.png" alt="">
+            <div class="text">
+                <div class="desc">
+                    <h1>title</h1>
+                    <ul>
+                        <li>something something</li>
+                        <li>something something</li>
+                        <li>something something</li>
+                        <li>something something</li>
+                    </ul>
+                </div>
+                <div class="circles">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </section>
+        <section id="s3">
+
+        </section>
     </div>
+    <ul class="sm">
+        <li><a href="#!"><img src="/img/mail-envelope-svgrepo-com.svg" alt="e-mail"></a></li>
+        <li><a href="#!"><img src="/img/github-svgrepo-com.svg" alt="github"></a></li>
+        <li><a href="#!"><img src="/img/dribbble-svgrepo-com.svg" alt="dribbble"></a></li>
+        <li><a href="#!"><img src="/img/linkedin-big-logo-svgrepo-com.svg" alt="linkedin"></a></li>
+    </ul>   
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
@@ -69,25 +115,6 @@
    })
 </script>
 <script src="/js/nav.js"></script>
-<script>
-    const projectTitleTl = new TimelineMax({paused:true})
-    const slidesTl = new TimelineMax({paused:true});
-
-    projectTitleTl
-                    .fromTo('#projectlogo',1,{height:0},{height:200,ease:Power2.easeInOut})
-                    .to('#projectlogo',.75,{perspective:1000,rotationZ:4, rotationY: -5, ease: Power2.easeOut})
-                    .to('#projectlogo',.5,{x:-400,y:-20,scale:.1,autoAlpha:0, ease: Power2.easeOut});
-
-    slidesTl
-            .fromTo('.slides',1.5,{autoAlpha:0,x:500,y:20},{autoAlpha:1,x:0,y:0,ease:Power2.easeInOut})    
-
-    projectTitleTl.play();
-
-
-
-    projectTitleTl.eventCallback('onComplete',()=>{
-        slidesTl.play();
-    })
-</script>   
+<script src="/js/slideScripts.js"></script>
 </body>
 </html>
