@@ -52,7 +52,7 @@
                 <div class="text">
                     <div><h1>I deliver <span>custom</span> & <span>functional</span> websites for bussiness.</h1></div>
                     <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque amet ipsam blanditiis id nostrum consequatur fugit corrupti ullam, nihil distinctio reiciendis. Suscipit nam voluptatibus sequi eius ullam officia consectetur illo.</p></div>
-                    <div><a href="#s2" class="button" href="#!">Show me.</a></div>
+                    <div><a href="#s2" class="button">Show me.</a></div>
                 </div>
                 <div class="scroll-indicator">
                     <span>scroll down</span>
@@ -106,7 +106,7 @@
                 <div class="controlls">
                     <div class="prev">
                         <h1>04.</h1>
-                        <a href="#!" class="button">previous</a>
+                        <a href="#s4" class="button">previous</a>
                     </div>
                     <div class="next">
                         <h1>02.</h1>
@@ -175,7 +175,7 @@
                     <div class="background"></div>
                     <div class="title">
                         <h1><span>Florist</span> Sapientia</h1>
-                        <h2 class="proj-num">02.</h2>
+                        <h2 class="proj-num">03.</h2>
                     </div>
                     <div class="description">
                         <h1>Agenda</h1>
@@ -222,7 +222,7 @@
                     </div>
                     <div class="next">
                         <h1>03.</h1>
-                        <a href="#s1" class="button">next</a>
+                        <a href="#s2" class="button">next</a>
                     </div>
                 </div>
             </section>
@@ -259,27 +259,13 @@
 <script>
     const landingTl = new TimelineMax();
 
-landingTl
+    landingTl
         .fromTo('#s1 .text h1',1.5,{y:300},{y:0,ease:Power2.easeInOut})
         .fromTo('#s1 .text p',1.5,{y:-300},{y:0,ease:Power2.easeInOut},'-=1.5')
         .fromTo('#s1 .text .button',1.5,{y:300},{y:0,ease:Power2.easeInOut},'-=1.5')
-    const scrollTl = new TimelineMax();
-
-    scrollTl
-        .to('.scroll-indicator img',.3,{y:200,autoAlpha:0,ease:Power2.easeInOut})
-        .to('.scroll-indicator span',.3,{y:-100,autoAlpha:0,ease:Power2.easeInOut},'-=.3')
 
 
-        const scene1 = new ScrollMagic.Scene({
-        offset: 600,
-        triggerElement: '#s1',
-        reverse: true
-    })
-    .setTween(scrollTl)
-    .addTo(controller)
-
-
-    const s2Tl = new TimelineMax();
+    const s2Tl = new TimelineMax({paused:true});
 
     s2Tl        
         .fromTo('#s2 .background',3.5,{width:0},{width:"100%", ease:Power4.easeOut})
@@ -292,15 +278,8 @@ landingTl
         .fromTo('#s2 .description .typography',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
         .fromTo('#s2 .description .button',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
 
-        const sceneS2 = new ScrollMagic.Scene({
-        offset: -300,
-        triggerElement: '#s2',
-        reverse: true
-    })
-    .setTween(s2Tl)
-    .addTo(controller)
 
-    const s3Tl = new TimelineMax();
+    const s3Tl = new TimelineMax({paused:true});
 
     s3Tl        
         .fromTo('#s3 .background',3.5,{width:0},{width:"100%", ease:Power4.easeOut})
@@ -313,15 +292,8 @@ landingTl
         .fromTo('#s3 .description .typography',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
         .fromTo('#s3 .description .button',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
 
-        const sceneS3 = new ScrollMagic.Scene({
-        offset: 0,
-        triggerElement: '#s3',
-        reverse: true
-    })
-    .setTween(s3Tl)
-    .addTo(controller)
 
-    const s4Tl = new TimelineMax();
+    const s4Tl = new TimelineMax({paused:true});
 
     s4Tl        
         .fromTo('#s4 .background',3.5,{width:0},{width:"100%", ease:Power4.easeOut})
@@ -334,13 +306,56 @@ landingTl
         .fromTo('#s4 .description .typography',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
         .fromTo('#s4 .description .button',1,{autoAlpha:0},{autoAlpha:1, ease:Power4.easeInOut},'-=4')
 
-        const sceneS4 = new ScrollMagic.Scene({
-        offset: 0,
-        triggerElement: '#s4',
-        reverse: true
+
+    let next = document.querySelectorAll('.next a');
+    let prev = document.querySelectorAll('.prev a');
+    const landingButton = document.querySelector('#s1 a');
+
+    landingButton.addEventListener('click',()=>{
+        s2Tl.restart();
     })
-    .setTween(s4Tl)
-    .addTo(controller)
+
+
+    next.forEach(e=>{
+        e.addEventListener('click',function(event){
+            let src = e.getAttribute('href');
+            event.preventDefault();
+            
+
+            s2Tl.reverse().timeScale(3);
+            s3Tl.reverse().timeScale(3);
+            s4Tl.reverse().timeScale(3);
+
+            setTimeout(()=>{                
+                window.location.href = src;
+
+                s2Tl.restart().timeScale(1);
+                s3Tl.restart().timeScale(1);
+                s4Tl.restart().timeScale(1);
+            },2500)
+        })
+    })
+
+    prev.forEach(e=>{
+        e.addEventListener('click',function(event){
+            let src = e.getAttribute('href')
+            event.preventDefault();            
+
+            s2Tl.reverse().timeScale(3);
+            s3Tl.reverse().timeScale(3);
+            s4Tl.reverse().timeScale(3);
+
+            setTimeout(()=>{                
+                window.location.href = src;
+
+                s2Tl.restart().timeScale(1);
+                s3Tl.restart().timeScale(1);
+                s4Tl.restart().timeScale(1);
+            },2500)
+        })
+    })
+
+    
 </script>
 </body>
 </html>
