@@ -27,8 +27,9 @@ const logoTl = new TimelineMax();
 const controller = new ScrollMagic.Controller();
 
 logoTl
-    .to('.nameL',.3,{width:0,autoAlpha:0,ease:Power2.easeInOut})
+    .to('.nameL',.6,{width:0,autoAlpha:0,ease:Power2.easeInOut})
     .to('#logo img',.3,{height:'40px'})
+    .to('.scroll-indicator',.3,{autoAlpha:0,y:-300,ease:Power2.easeInOut},'-=.9')
 
 
     const scene = new ScrollMagic.Scene({
@@ -39,3 +40,10 @@ logoTl
 .setTween(logoTl)
 .addTo(controller)
 
+document.querySelector('#logo').addEventListener('mouseenter',()=>{
+    logoTl.reverse();
+})
+
+document.querySelector('#logo').addEventListener('mouseleave',()=>{
+    logoTl.play();
+})

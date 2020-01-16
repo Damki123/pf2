@@ -7,7 +7,6 @@ html,body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar{
@@ -593,7 +592,7 @@ section{
         }
         .container{
             .background{
-                background: linear-gradient(#FFE7DB90,#FFE7DB90), url(/img/sap_1.png);
+                background: linear-gradient(#FFE7DB90,#FFE7DB90), url(/img/sap_1.jpg);
             }
             .photo-sm1{
                 background: linear-gradient(#FFE7DB70,#FFE7DB70), url(/img/sap_3.jpg);
