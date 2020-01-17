@@ -398,11 +398,11 @@ section {
   position: relative; }
 
 .parallax {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
   position: relative;
   z-index: 0;
-  background: #0969e6;
+  background: gold;
   margin: 200px 0; }
   .parallax:after {
     content: '';
@@ -413,51 +413,34 @@ section {
     height: 100%;
     z-index: 0;
     background-attachment: fixed !important;
-    background-repeat: no-repeat !important; }
+    background-repeat: no-repeat !important;
+    background-size: 95% !important;
+    background-position: center !important; }
   .parallax:nth-of-type(1) {
     -webkit-transform: skewX(-20deg) rotate(-10deg);
     -ms-transform: skewX(-20deg) rotate(-10deg);
-    transform: skewX(-20deg) rotate(-10deg); }
+    transform: skewX(-20deg) rotate(-10deg);
+    margin: 100px 0 150px; }
     .parallax:nth-of-type(1):after {
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 105, 230, 0.75))), url(/img/tesat_1.svg);
-      background: -webkit-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_1.svg);
-      background: -o-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_1.svg);
-      background: linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_1.svg);
-      background-position: 80% 0%;
-      background-size: 40%; }
+      background: url(/img/GOALS.svg); }
   .parallax:nth-of-type(2) {
     -webkit-transform: skewX(20deg) rotate(10deg);
     -ms-transform: skewX(20deg) rotate(10deg);
     transform: skewX(20deg) rotate(10deg); }
     .parallax:nth-of-type(2):after {
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 105, 230, 0.75))), url(/img/tesat_2.svg);
-      background: -webkit-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_2.svg);
-      background: -o-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_2.svg);
-      background: linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_2.svg);
-      background-position: 20% 0%;
-      background-size: 40%; }
+      background: url(/img/TECH_USED.svg); }
   .parallax:nth-of-type(3) {
     -webkit-transform: skewX(-20deg) rotate(-10deg);
     -ms-transform: skewX(-20deg) rotate(-10deg);
     transform: skewX(-20deg) rotate(-10deg); }
     .parallax:nth-of-type(3):after {
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 105, 230, 0.75))), url(/img/tesat_3.svg);
-      background: -webkit-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_3.svg);
-      background: -o-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_3.svg);
-      background: linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_3.svg);
-      background-position: 80% 0%;
-      background-size: 40%; }
+      background: url(/img/OBSTACLES.svg); }
   .parallax:nth-of-type(4) {
     -webkit-transform: skewX(20deg) rotate(10deg);
     -ms-transform: skewX(20deg) rotate(10deg);
     transform: skewX(20deg) rotate(10deg); }
     .parallax:nth-of-type(4):after {
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 105, 230, 0.75))), url(/img/tesat_4.svg);
-      background: -webkit-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_4.svg);
-      background: -o-linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_4.svg);
-      background: linear-gradient(rgba(9, 105, 230, 0.75)), url(/img/tesat_4.svg);
-      background-position: 50% 40%;
-      background-size: 70%; }
+      background: url(/img/WHAT_IVE_LEARNED.svg); }
 
 #s1 {
   display: -webkit-box;
@@ -701,7 +684,8 @@ section {
       #s2 .text .desc h1 {
         font-size: 60px;
         text-transform: uppercase;
-        margin: 15px 0; }
+        margin: 15px 0;
+        border-bottom: 3px solid #F30647; }
       #s2 .text .desc li {
         font-size: 22px;
         line-height: 30px; }
@@ -749,15 +733,28 @@ section {
   -webkit-perspective: 1000px;
   perspective: 1000px; }
   #s3 .photo {
-    position: absolute;
-    top: 100px;
-    right: 100px;
+    position: relative;
+    top: -150px;
+    right: 0px;
     left: unset !important;
     margin-right: -500px;
     max-height: 900px;
     max-width: 900px;
     -webkit-transform: perspective(1000px) rotateY(-8deg) translateX(200px);
-    transform: perspective(1000px) rotateY(-8deg) translateX(200px); }
+    transform: perspective(1000px) rotateY(-8deg) translateX(200px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #s3 .photo img {
+      position: absolute; }
+      #s3 .photo img:nth-child(2) {
+        margin-left: 250px; }
   #s3 .text {
     position: relative;
     display: -webkit-box;
@@ -772,7 +769,7 @@ section {
     width: 1200px;
     height: 1200px;
     margin-left: -200px;
-    margin-top: 300px; }
+    margin-top: 500px; }
     #s3 .text .desc {
       position: absolute;
       z-index: 1;
@@ -799,7 +796,7 @@ section {
         display: flex;
         list-style-type: none; }
         #s3 .text .desc ul li {
-          margin: 15px 30px 30px 0;
+          margin: 15px 30px 25px 0;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -819,7 +816,8 @@ section {
       #s3 .text .desc h1 {
         font-size: 60px;
         text-transform: uppercase;
-        margin: 15px 0; }
+        margin: 15px 0 35px;
+        border-bottom: 3px solid #F30647; }
       #s3 .text .desc p {
         font-size: 18px;
         max-width: 400px; }
@@ -888,7 +886,8 @@ section {
     #s4 .text h1 {
       font-size: 60px;
       text-transform: uppercase;
-      margin: 15px 0 0; }
+      margin: 15px 0 0;
+      border-bottom: 3px solid #F30647; }
     #s4 .text p {
       font-size: 18px;
       max-width: 400px; }
@@ -972,7 +971,8 @@ section {
       font-size: 60px;
       text-transform: uppercase;
       margin: 15px 0 0;
-      z-index: 1; }
+      z-index: 1;
+      border-bottom: 3px solid #F30647; }
     #s5 .text p {
       font-size: 18px;
       max-width: 400px;

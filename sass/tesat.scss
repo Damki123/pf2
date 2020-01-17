@@ -322,11 +322,11 @@ section{
 }
 
 .parallax{
-    height:30vh;
+    height:40vh;
     width: 100%;
     position: relative;
     z-index: 0;
-    background: rgb(9, 105, 230);
+    background: gold;
     margin: 200px 0;
     &:after{
         content: '';
@@ -338,37 +338,32 @@ section{
         z-index: 0;
         background-attachment: fixed !important;
         background-repeat: no-repeat !important;
+        background-size: 95% !important;
+        background-position: center !important;
     }
     &:nth-of-type(1){
         transform: skewX(-20deg) rotate(-10deg);
+        margin: 100px 0 150px;
         &:after{
-            background: linear-gradient(rgba(9, 105, 230,.75)), url(/img/tesat_1.svg);
-            background-position: 80% 0%;
-            background-size: 40%;
+            background: url(/img/GOALS.svg);
         }
     }
     &:nth-of-type(2){
         transform: skewX(20deg) rotate(10deg);
         &:after{
-            background: linear-gradient(rgba(9, 105, 230,.75)), url(/img/tesat_2.svg);
-            background-position: 20% 0%;
-            background-size: 40%;
+            background: url(/img/TECH_USED.svg);
         }
     }
     &:nth-of-type(3){
         transform: skewX(-20deg) rotate(-10deg);
         &:after{
-            background: linear-gradient(rgba(9, 105, 230,.75)), url(/img/tesat_3.svg);
-            background-position: 80% 0%;
-            background-size: 40%;
+            background: url(/img/OBSTACLES.svg);
         }
     }
     &:nth-of-type(4){
         transform: skewX(20deg) rotate(10deg);
         &:after{
-            background: linear-gradient(rgba(9, 105, 230,.75)), url(/img/tesat_4.svg);
-            background-position: 50% 40%;
-            background-size: 70%;            
+            background: url(/img/WHAT_IVE_LEARNED.svg);
         }
     }
 }
@@ -544,6 +539,7 @@ section{
                 font-size: 60px;
                 text-transform: uppercase;
                 margin: 15px 0;
+                border-bottom: 3px solid $lightRed;
             }
             li{
                 font-size: 22px;
@@ -587,14 +583,23 @@ section{
     align-items: center;
     perspective:1000px;
     .photo{
-        position: absolute;
-        top: 100px;
-        right: 100px;
+        position: relative;
+        top:-150px;
+        right: 0px;
         left: unset !important;
         margin-right: -500px;
         max-height: 900px;
         max-width: 900px;
         transform: perspective(1000px) rotateY(-8deg) translateX(200px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            position: absolute;
+            &:nth-child(2){
+                margin-left: 250px;
+            }
+        }
     }
     .text{
         position: relative;
@@ -604,7 +609,7 @@ section{
         width: 1200px;
         height: 1200px;
         margin-left: -200px;
-        margin-top: 300px;
+        margin-top: 500px;
         .desc{
             position: absolute;
             z-index: 1;
@@ -621,7 +626,7 @@ section{
                 display: flex;
                 list-style-type: none;
                 li{
-                    margin: 15px 30px 30px 0;
+                    margin: 15px 30px 25px 0;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -638,7 +643,8 @@ section{
             h1{
                 font-size: 60px;
                 text-transform: uppercase;
-                margin: 15px 0;
+                margin: 15px 0 35px;
+                border-bottom: 3px solid $lightRed;
             }
             p{
                 font-size: 18px;
@@ -691,6 +697,7 @@ section{
             font-size: 60px;
             text-transform: uppercase;
             margin: 15px 0 0;
+            border-bottom: 3px solid $lightRed;
         }
         p{
             font-size: 18px;
@@ -747,6 +754,7 @@ section{
             text-transform: uppercase;
             margin: 15px 0 0;
             z-index: 1;
+            border-bottom: 3px solid $lightRed;
         }
         p{
             font-size: 18px;
