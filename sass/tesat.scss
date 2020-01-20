@@ -585,17 +585,16 @@ section{
     .photo{
         position: relative;
         top:-150px;
-        right: 0px;
+        right: 100px;
         left: unset !important;
-        margin-right: -500px;
-        max-height: 900px;
-        max-width: 900px;
-        transform: perspective(1000px) rotateY(-8deg) translateX(200px);
         display: flex;
         justify-content: center;
         align-items: center;
         img{
             position: absolute;
+            left: 0;
+            max-height: 600px;
+            max-width: 800px;
             &:nth-child(2){
                 margin-left: 250px;
             }

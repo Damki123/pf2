@@ -29,11 +29,11 @@ s2Desc
     .addTo(controller)
 
 s3Photo
-    .from('#s3 .photo',2,{x:500,y:50,autoAlpha:0,ease:Power2.easeOut})
+    .staggerFrom('#s3 .photo img',2,{x:500,y:50,autoAlpha:0,ease:Power2.easeOut},.3)
 
 
     const sceneS3Photo = new ScrollMagic.Scene({
-        offset: 100,
+        offset: -200,
         triggerElement: '#s3 .photo',
         reverse: false,
     })
